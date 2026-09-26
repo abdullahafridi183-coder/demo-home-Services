@@ -1,85 +1,104 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0b1220">
-  <meta name="description" content="Premium local home-service demo website.">
-  <meta property="og:title" content="Professional Home Services">
-  <meta property="og:description" content="Reliable local service with a premium digital experience.">
+  <meta name="description" content="">
   <meta property="og:type" content="website">
-  <link rel="canonical" href="https://example.com/demo/your-services">
-  <title>Home Services | Reliable Local Service</title>
+  <meta property="og:title" content="">
+  <meta property="og:description" content="">
+  <meta property="og:image" content="">
+  <link rel="canonical" href="">
+  <title>Home Service Demo</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json" id="localBusinessSchema">{}</script>
 </head>
 <body>
-  <div class="demo-badge" id="demoBadge">DEMO WEBSITE</div>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <div class="announcement">
+  <div id="demoBadge" class="demo-badge" hidden>DEMO WEBSITE</div>
+
+  <div class="announcement" id="announcement">
     <div class="container announcement-inner">
-      <span>● Fast • Reliable • Local Service</span>
-      <span class="announcement-right" id="announcementMessage">Professional service when you need it.</span>
+      <span data-business="announcement">Fast • Reliable • Local Service</span>
+      <a id="announcementCta" href="#quote">Get a Free Quote <span aria-hidden="true">→</span></a>
     </div>
   </div>
 
   <header class="site-header" id="siteHeader">
-    <nav class="nav container">
+    <nav class="navbar container" aria-label="Primary navigation">
       <a class="brand" href="#home" aria-label="Home">
-        <span class="brand-mark" id="brandMark">HS</span>
-        <span id="brandName">Your Services</span>
+        <span class="brand-mark" id="brandMark" aria-hidden="true">DS</span>
+        <span class="brand-copy">
+          <strong id="navBusinessName">Your Services</strong>
+          <small id="navCategory">Home Services</small>
+        </span>
       </a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+
+      <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="primaryNav" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
-      <div class="nav-links" id="navLinks">
+
+      <div class="nav-links" id="primaryNav">
         <a href="#home">Home</a>
         <a href="#services">Services</a>
         <a href="#about">About</a>
         <a href="#reviews">Reviews</a>
         <a href="#areas">Service Areas</a>
         <a href="#contact">Contact</a>
-        <a class="nav-cta" href="#quote">Get a Quote <span>↗</span></a>
+        <a class="btn btn-primary btn-nav" href="#quote">Get a Quote</a>
       </div>
     </nav>
   </header>
 
-  <main>
-    <section class="hero section" id="home">
-      <div class="hero-glow glow-one"></div>
-      <div class="hero-glow glow-two"></div>
+  <main id="main">
+    <section class="hero section-dark" id="home">
+      <div class="hero-glow hero-glow-one"></div>
+      <div class="hero-glow hero-glow-two"></div>
       <div class="container hero-grid">
         <div class="hero-copy reveal">
-          <div class="eyebrow"><span class="eyebrow-dot"></span><span id="heroEyebrow">Trusted Local Service</span></div>
-          <h1 id="heroTitle">Reliable Service.<br><em>Done Right.</em></h1>
+          <div class="eyebrow"><span class="eyebrow-dot"></span><span id="heroEyebrow">Local Home Service</span></div>
+          <h1 id="heroTitle">Reliable Service When You Need It Most</h1>
           <p id="heroDescription">Professional local service, transparent communication and dependable workmanship for homeowners and businesses.</p>
+
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#quote">Get a Free Quote <span>→</span></a>
-            <a class="btn btn-ghost" id="heroCall" href="tel:+10000000000">Call Now</a>
-            <a class="btn btn-whatsapp" id="heroWhatsapp" href="#" target="_blank" rel="noopener">WhatsApp</a>
+            <a class="btn btn-accent" href="#quote">Get a Free Quote <span>→</span></a>
+            <a class="btn btn-outline-light" id="heroCall" href="tel:">Call Now</a>
+            <a class="text-link" id="heroWhatsApp" href="#" target="_blank" rel="noopener">WhatsApp <span>↗</span></a>
           </div>
+
           <div class="hero-trust">
-            <div class="rating"><strong id="ratingValue">4.9</strong><span class="stars">★★★★★</span><small id="reviewCount">250+ reviews</small></div>
-            <div class="divider"></div>
-            <div class="trust-item"><strong>Fast Response</strong><small>Local service</small></div>
-            <div class="divider"></div>
-            <div class="trust-item"><strong>Professional</strong><small>Customer focused</small></div>
+            <div class="rating-box">
+              <strong id="heroRating">—</strong>
+              <span class="stars" aria-label="rating">★★★★★</span>
+              <small><span id="heroReviewCount">Verified reviews</span></small>
+            </div>
+            <div class="trust-divider"></div>
+            <div class="trust-mini">
+              <strong id="heroExperience">[X]+</strong>
+              <span>Years Experience</span>
+            </div>
+            <div class="trust-mini">
+              <strong id="heroLicense">—</strong>
+              <span>License / Insurance</span>
+            </div>
           </div>
         </div>
 
         <div class="hero-visual reveal reveal-delay">
           <div class="hero-image-wrap">
-            <img id="heroImage" src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1200&q=85" alt="Professional home service technician">
-            <div class="image-overlay"></div>
-            <div class="floating-card card-rating">
-              <span class="mini-icon">★</span>
-              <div><strong id="floatingRating">4.9 / 5</strong><small>Customer rating</small></div>
+            <img id="heroImage" src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=1200&q=85" alt="Home service professional at work" fetchpriority="high">
+            <div class="floating-card floating-card-rating">
+              <span class="icon-circle">★</span>
+              <div><strong id="floatRating">4.9</strong><small>Customer rating</small></div>
             </div>
-            <div class="floating-card card-local">
-              <span class="mini-icon">⌖</span>
-              <div><strong id="floatingArea">Your City</strong><small>Serving locally</small></div>
+            <div class="floating-card floating-card-local">
+              <span class="icon-circle">✓</span>
+              <div><strong>Local</strong><small id="floatArea">Service area</small></div>
             </div>
           </div>
         </div>
@@ -90,181 +109,195 @@
       <div class="container trust-grid" id="trustGrid"></div>
     </section>
 
-    <section class="section section-light" id="services">
+    <section class="section" id="services">
       <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <span class="section-kicker">WHAT WE DO</span>
-            <h2>Services built around <span>your needs.</span></h2>
-          </div>
-          <p>From routine jobs to urgent requests, this demo can be adapted to showcase the services your business provides.</p>
+        <div class="section-heading reveal">
+          <span class="eyebrow dark">WHAT WE DO</span>
+          <h2>Professional services built around your needs.</h2>
+          <p id="servicesIntro">From routine maintenance to urgent repairs, choose the service you need and request a quote.</p>
         </div>
-        <div class="service-grid" id="serviceGrid"></div>
+        <div class="cards-grid services-grid" id="servicesGrid"></div>
       </div>
     </section>
 
-    <section class="section why-section">
-      <div class="container">
-        <div class="split-head reveal">
-          <span class="section-kicker">WHY CHOOSE US</span>
-          <h2>A better service experience<br><span>from start to finish.</span></h2>
+    <section class="section section-soft" id="why">
+      <div class="container split-section">
+        <div class="section-heading reveal">
+          <span class="eyebrow dark">WHY CHOOSE US</span>
+          <h2>A service experience designed to feel simple.</h2>
+          <p id="whyIntro">Clear communication, practical solutions and a straightforward path from first contact to completed work.</p>
         </div>
         <div class="benefit-grid" id="benefitGrid"></div>
       </div>
     </section>
 
-    <section class="section about-section" id="about">
+    <section class="section" id="about">
       <div class="container about-grid">
-        <div class="about-visual reveal">
-          <img id="aboutImage" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=85" alt="Professional service team at work" loading="lazy">
+        <div class="about-image reveal">
+          <img id="aboutImage" src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1000&q=85" alt="Service professional" loading="lazy">
           <div class="experience-card">
-            <strong id="experienceValue">[X]+</strong>
-            <span>Years of experience<br>placeholder</span>
+            <strong id="aboutExperience">[X]+</strong>
+            <span>Years<br>Experience</span>
           </div>
         </div>
-        <div class="about-copy reveal reveal-delay">
-          <span class="section-kicker">ABOUT THE BUSINESS</span>
-          <h2>Professional work.<br><span>Personal service.</span></h2>
-          <p id="aboutDescription">A polished introduction for your business goes here. Replace this text with verified information about the team, the services you provide and the customers you serve.</p>
-          <div class="about-points">
-            <div><span>✓</span><strong id="aboutArea">Serving Your City & Surrounding Areas</strong></div>
-            <div><span>✓</span><strong>Clear communication & convenient booking</strong></div>
-            <div><span>✓</span><strong>Service information tailored to your business</strong></div>
-          </div>
-          <a class="text-link" href="#quote">Request a quote <span>→</span></a>
+        <div class="section-heading reveal">
+          <span class="eyebrow dark">ABOUT THE BUSINESS</span>
+          <h2 id="aboutTitle">Dependable local service, without the runaround.</h2>
+          <p id="aboutDescription">Your business description goes here. Replace this text with verified information about the company, its approach and the customers it serves.</p>
+          <div class="about-facts" id="aboutFacts"></div>
+          <a class="btn btn-dark" href="#quote">Request a Quote <span>→</span></a>
         </div>
       </div>
     </section>
 
-    <section class="section gallery-section">
+    <section class="section section-dark gallery-section" id="gallery">
       <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <span class="section-kicker">OUR WORK</span>
-            <h2>Show the work<br><span>that earns trust.</span></h2>
-          </div>
-          <p>Replace these images with verified project or service photos for each prospect.</p>
+        <div class="section-heading heading-light reveal">
+          <span class="eyebrow">OUR WORK</span>
+          <h2>Recent work & service highlights.</h2>
+          <p>Replace the demo images below with verified project, team or service photos.</p>
         </div>
         <div class="gallery-grid" id="galleryGrid"></div>
       </div>
     </section>
 
-    <section class="process-section">
+    <section class="section" id="process">
       <div class="container">
-        <div class="process-title reveal">
-          <span class="section-kicker">SIMPLE PROCESS</span>
-          <h2>From request to <span>done.</span></h2>
+        <div class="section-heading center reveal">
+          <span class="eyebrow dark">HOW IT WORKS</span>
+          <h2>Three simple steps.</h2>
         </div>
-        <div class="process-grid">
-          <div class="process-card reveal"><span>01</span><div class="process-icon">✦</div><h3>Contact Us</h3><p>Call, message on WhatsApp, or send a quote request.</p></div>
-          <div class="process-card reveal reveal-delay"><span>02</span><div class="process-icon">↗</div><h3>Get Your Quote</h3><p>Collect the details needed to understand the job.</p></div>
-          <div class="process-card reveal reveal-delay-2"><span>03</span><div class="process-icon">✓</div><h3>We Complete the Job</h3><p>Deliver the service and keep the customer informed.</p></div>
-        </div>
+        <div class="process-grid" id="processGrid"></div>
       </div>
     </section>
 
-    <section class="section reviews-section" id="reviews">
+    <section class="section section-soft" id="reviews">
       <div class="container">
-        <div class="section-head reveal">
-          <div><span class="section-kicker">CUSTOMER FEEDBACK</span><h2>Trust looks better<br><span>when customers say it.</span></h2></div>
-          <div class="review-summary"><strong id="reviewRatingLarge">4.9</strong><span class="stars">★★★★★</span><small id="reviewCountLarge">250+ reviews</small></div>
+        <div class="section-heading center reveal">
+          <span class="eyebrow dark">CUSTOMER FEEDBACK</span>
+          <h2>What customers are saying.</h2>
+          <p id="reviewsNote">Demo placeholders are shown until verified reviews are added.</p>
         </div>
-        <div class="review-grid" id="reviewGrid"></div>
+        <div class="reviews-grid" id="reviewsGrid"></div>
       </div>
     </section>
 
     <section class="section areas-section" id="areas">
       <div class="container areas-grid">
-        <div class="areas-copy reveal">
-          <span class="section-kicker">SERVICE AREA</span>
-          <h2>Local service,<br><span>where you need it.</span></h2>
-          <p id="areasIntro">We proudly serve Your City and surrounding areas. Update this section with verified locations for each client.</p>
+        <div class="section-heading reveal">
+          <span class="eyebrow dark">SERVICE AREAS</span>
+          <h2>Serving <span id="areaHeadline">your local area</span> and surrounding communities.</h2>
+          <p id="areaDescription">Update this section with the verified cities, neighborhoods, counties or regions the business serves.</p>
           <div class="area-list" id="areaList"></div>
-          <a class="btn btn-primary" id="mapsButton" href="#" target="_blank" rel="noopener">Open Google Maps ↗</a>
+          <a class="btn btn-dark" id="mapsButton" href="#" target="_blank" rel="noopener">Open Google Maps <span>↗</span></a>
         </div>
-        <div class="map-card reveal reveal-delay">
+        <div class="map-card reveal">
           <div class="map-pattern"></div>
           <div class="map-pin">⌖</div>
-          <div class="map-label"><strong id="mapCity">Your City</strong><span>Local service area</span></div>
+          <div>
+            <strong id="mapCity">Service Area</strong>
+            <span id="mapAddress">Map link available after configuration</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="quote-section" id="quote">
+    <section class="section quote-section" id="quote">
       <div class="container quote-grid">
         <div class="quote-copy reveal">
-          <span class="section-kicker">REQUEST SERVICE</span>
-          <h2>Let's talk about<br><span>your project.</span></h2>
-          <p>Send your details and the business can follow up with the customer. This form connects to Google Sheets after you add your Apps Script URL.</p>
+          <span class="eyebrow dark">GET STARTED</span>
+          <h2>Tell us what you need. We'll take it from there.</h2>
+          <p>Send a few details and the business can follow up with availability, questions and a quote.</p>
           <div class="quote-contact">
-            <a id="quotePhone" href="tel:+10000000000"><span>☎</span><div><small>Call</small><strong id="quotePhoneText">+1 (000) 000-0000</strong></div></a>
-            <a id="quoteEmail" href="mailto:business@example.com"><span>✉</span><div><small>Email</small><strong id="quoteEmailText">business@example.com</strong></div></a>
+            <a id="quotePhone" href="tel:">Call <span>→</span></a>
+            <a id="quoteWhatsApp" href="#" target="_blank" rel="noopener">WhatsApp <span>→</span></a>
           </div>
         </div>
 
-        <form class="quote-form reveal reveal-delay" id="quoteForm" novalidate>
-          <div class="form-heading"><div><span>FREE QUOTE</span><h3>Tell us what you need.</h3></div><span class="secure">● Secure form</span></div>
+        <form class="lead-form reveal" id="quoteForm" novalidate>
+          <input type="hidden" name="formType" value="Quote Request">
           <div class="form-row">
-            <label>Full Name<input name="name" type="text" autocomplete="name" placeholder="Your name" required></label>
-            <label>Email<input name="email" type="email" autocomplete="email" placeholder="you@example.com" required></label>
+            <label>Name <input name="name" autocomplete="name" required></label>
+            <label>Email <input name="email" type="email" autocomplete="email" required></label>
           </div>
           <div class="form-row">
-            <label>Phone<input name="phone" type="tel" autocomplete="tel" placeholder="+1..." required></label>
-            <label>Service Needed<select name="service" id="serviceSelect" required><option value="">Select a service</option></select></label>
+            <label>Phone <input name="phone" type="tel" autocomplete="tel" required></label>
+            <label>Service Needed <select name="service" id="serviceSelect" required><option value="">Choose a service</option></select></label>
           </div>
           <div class="form-row">
-            <label>Preferred Date<input name="preferredDate" type="date"></label>
-            <label>Preferred Time<input name="preferredTime" type="time"></label>
+            <label>Preferred Date <input name="preferredDate" type="date"></label>
+            <label>Preferred Time <input name="preferredTime" type="time"></label>
           </div>
-          <label>Address<input name="address" type="text" autocomplete="street-address" placeholder="Service address"></label>
-          <label>Message<textarea name="message" rows="4" placeholder="Tell us a little about the job..." required></textarea></label>
-          <button class="btn btn-primary submit-btn" type="submit"><span class="btn-label">Send Request</span><span class="spinner"></span><span>→</span></button>
-          <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
-          <p class="form-note">By submitting, you agree that the business may contact you about your request.</p>
+          <label>Address <input name="address" autocomplete="street-address" placeholder="Service address"></label>
+          <label>Message <textarea name="message" rows="5" placeholder="Tell us briefly what you need..."></textarea></label>
+          <button class="btn btn-accent btn-submit" id="submitButton" type="submit">Request My Quote <span>→</span></button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+          <small class="form-note">By submitting, you are requesting contact from the business. This demo does not guarantee availability or pricing.</small>
         </form>
       </div>
     </section>
 
     <section class="section contact-section" id="contact">
       <div class="container">
-        <div class="contact-card reveal">
-          <div class="contact-main">
-            <span class="section-kicker">CONTACT</span>
-            <h2>Ready when<br><span>you are.</span></h2>
-            <p id="contactDescription">Reach out by phone, WhatsApp or email. Replace the demo details with verified client information before publishing.</p>
+        <div class="section-heading center reveal">
+          <span class="eyebrow dark">CONTACT</span>
+          <h2>Ready when you are.</h2>
+        </div>
+        <div class="contact-grid">
+          <a class="contact-card reveal" id="contactPhone" href="tel:">
+            <span class="contact-icon">☎</span><span><small>Call</small><strong id="contactPhoneText">—</strong></span>
+          </a>
+          <a class="contact-card reveal" id="contactEmail" href="mailto:">
+            <span class="contact-icon">✉</span><span><small>Email</small><strong id="contactEmailText">—</strong></span>
+          </a>
+          <a class="contact-card reveal" id="contactWhatsApp" href="#" target="_blank" rel="noopener">
+            <span class="contact-icon">◉</span><span><small>WhatsApp</small><strong>Message us</strong></span>
+          </a>
+          <div class="contact-card reveal">
+            <span class="contact-icon">⌖</span><span><small>Address</small><strong id="contactAddress">—</strong></span>
           </div>
-          <div class="contact-details" id="contactDetails"></div>
-          <div class="contact-actions">
-            <a class="btn btn-primary" href="#quote">Get a Quote →</a>
-            <a class="btn btn-dark" id="contactWhatsapp" href="#" target="_blank" rel="noopener">WhatsApp</a>
+          <div class="contact-card reveal">
+            <span class="contact-icon">◷</span><span><small>Hours</small><strong id="contactHours">—</strong></span>
+          </div>
+          <div class="contact-card reveal">
+            <span class="contact-icon">◎</span><span><small>Social</small><strong id="socialLinks">Available on request</strong></span>
           </div>
         </div>
       </div>
     </section>
   </main>
 
+  <a class="floating-whatsapp" id="floatingWhatsApp" href="#" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">◉<span>WhatsApp</span></a>
+
+  <div class="mobile-cta" id="mobileCta">
+    <a id="mobileCall" href="tel:"><span>☎</span>Call</a>
+    <a id="mobileWhatsApp" href="#" target="_blank" rel="noopener"><span>◉</span>WhatsApp</a>
+    <a class="mobile-quote" href="#quote"><span>✦</span>Get Quote</a>
+  </div>
+
+  <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Image preview">
+    <button id="lightboxClose" type="button" aria-label="Close image">×</button>
+    <img id="lightboxImage" alt="">
+  </div>
+
   <footer class="footer">
     <div class="container footer-grid">
-      <div><a class="brand footer-brand" href="#home"><span class="brand-mark" id="footerBrandMark">HS</span><span id="footerBrandName">Your Services</span></a><p id="footerDescription">A reusable premium home-service website demo.</p></div>
-      <div><h4>Services</h4><div id="footerServices"></div></div>
-      <div><h4>Contact</h4><div id="footerContact"></div></div>
-      <div><h4>Explore</h4><a href="#about">About</a><a href="#reviews">Reviews</a><a href="#areas">Service Areas</a><a href="#quote">Get a Quote</a></div>
+      <div>
+        <a class="brand footer-brand" href="#home">
+          <span class="brand-mark" id="footerBrandMark">DS</span>
+          <span class="brand-copy"><strong id="footerBusinessName">Your Services</strong><small id="footerCategory">Home Services</small></span>
+        </a>
+        <p id="footerDescription">Professional local service for homeowners and businesses.</p>
+      </div>
+      <div><h3>Services</h3><div class="footer-list" id="footerServices"></div></div>
+      <div><h3>Service Areas</h3><div class="footer-list" id="footerAreas"></div></div>
+      <div><h3>Contact</h3><div class="footer-list"><a id="footerPhone" href="tel:">—</a><a id="footerEmail" href="mailto:">—</a><span id="footerHours">—</span></div></div>
     </div>
-    <div class="container footer-bottom"><span>© <span id="year"></span> <span id="copyrightName">Your Services</span>. Demo template.</span><span>Privacy Policy · Terms</span></div>
+    <div class="container footer-bottom">
+      <span>© <span id="year"></span> <span id="copyrightName">Your Services</span>. All rights reserved.</span>
+      <span><a href="#privacy" onclick="return false;">Privacy Policy</a> · <a href="#terms" onclick="return false;">Terms</a></span>
+    </div>
   </footer>
-
-  <a class="floating-wa" id="floatingWhatsapp" href="#" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">◔<span>WhatsApp</span></a>
-
-  <div class="mobile-bar">
-    <a id="mobileCall" href="tel:+10000000000"><span>☎</span>Call</a>
-    <a id="mobileWhatsapp" href="#" target="_blank" rel="noopener"><span>◔</span>WhatsApp</a>
-    <a href="#quote"><span>✦</span>Get Quote</a>
-  </div>
-
-  <div class="lightbox" id="lightbox" aria-hidden="true">
-    <button class="lightbox-close" id="lightboxClose" aria-label="Close">×</button>
-    <img id="lightboxImage" src="" alt="">
-  </div>
 
   <script src="script.js"></script>
 </body>
